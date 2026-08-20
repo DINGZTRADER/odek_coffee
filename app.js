@@ -1,4 +1,4 @@
-const ODEK_WHATSAPP = '256704650600'; // Prototype receptionist; swap to Odek Coffee's official number at handover.
+const ODEK_WHATSAPP = '256772487887'; // Official Odek Coffee WhatsApp receptionist number.
 const whatsappBase = `https://wa.me/${ODEK_WHATSAPP}?text=`;
 
 const messages = {
