@@ -5,6 +5,23 @@ const IMAGE_CHUNKS = Object.freeze({
   coffee: ['/assets/site-coffee-1.txt', '/assets/site-coffee-2.txt'],
 });
 
+const founderStyle = document.createElement('style');
+founderStyle.textContent = `
+  .founder{background:#fbf7ef!important;color:#1b120d!important;padding:78px 0!important}
+  .founderGrid{grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr)!important;gap:48px!important;align-items:center!important}
+  .founderPhoto .media{background:#f2e6d3!important;border-radius:18px!important;box-shadow:none!important;overflow:hidden!important}
+  .founderPhoto img{width:100%!important;height:auto!important;object-fit:contain!important;filter:brightness(1.16) contrast(.96)!important}
+  .founderText h2{color:#1b120d!important}
+  .founderText p{color:#5f554d!important}
+  .founderText .eyebrow{color:#914321!important}
+  .founder .credentials{display:none!important}
+  @media(max-width:820px){
+    .founderGrid{grid-template-columns:1fr!important;gap:28px!important}
+    .founderPhoto{width:100%;max-width:560px;margin:0 auto}
+  }
+`;
+document.head.appendChild(founderStyle);
+
 async function hydrateImages() {
   const entries = Object.entries(IMAGE_CHUNKS);
   await Promise.all(entries.map(async ([name, urls]) => {
